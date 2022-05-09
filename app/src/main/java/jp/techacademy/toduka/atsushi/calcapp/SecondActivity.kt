@@ -1,17 +1,19 @@
 package jp.techacademy.toduka.atsushi.calcapp
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_second.*
 
-class SecondActivity : AppCompatActivity() {
-
+class CalcResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        val value1 = intent.getFloatExtra("VALUE1", 0f)
-        val value2 = intent.getFloatExtra("VALUE2", 0f)
+        val value1 = intent.getDoubleExtra("RESULT", 0.0)
 
-        textView.text = "${value1 + value2}"
+        Log.d("UI_PARTS", value1.toString())
+
+        textView.text = "${value1.toString()}"
     }
 }
